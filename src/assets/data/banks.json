@@ -1,0 +1,179 @@
+{
+    "list": [
+        {
+          "id": 3863,
+          "name": "Industrial & Commercial Bank of China",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 4100,
+          "name": "Agricultural Bank of China",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 7060,
+          "name": "BNP Paribas",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 3701,
+          "name": "Wells Fargo",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 9921,
+          "name": "Sumitomo Mitsui Financial Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 1403,
+          "name": "Deutsche Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5131,
+          "name": "Lloyds Banking Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 9635,
+          "name": "Norinchukin Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5726,
+          "name": "Industrial Bank Co. Ltd",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 3909,
+          "name": "Credit Mutuel",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 2425,
+          "name": "Commonwealth Bank of Australia",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 9957,
+          "name": "European Investment Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 3838,
+          "name": "KfW Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5481,
+          "name": "KfW Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 8466,
+          "name": "CaixaBank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5698,
+          "name": "Banco do Brasil SA",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5155,
+          "name": "KB Financial Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 8173,
+          "name": "PNC Financial Services Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 7029,
+          "name": "Banco Bradesco SA",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 4941,
+          "name": "Hana Financial Group",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5453,
+          "name": "Woori Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 7552,
+          "name": "Raiffeisen Schweiz",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 3643,
+          "name": "VTB Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 5695,
+          "name": "Qatar National Bank",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        },
+        {
+          "id": 3232,
+          "name": "Belfius",
+          "color": null,
+          "icon": null,
+          "disabled": false
+        }
+    ]
+}

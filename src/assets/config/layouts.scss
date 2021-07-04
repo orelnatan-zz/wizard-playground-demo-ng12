@@ -1,0 +1,18 @@
+@import './definitions';
+
+%page {
+    width: $full-screen;
+
+    %body {
+        margin: 30px auto;
+        
+        @media screen and (min-width: $breakpoint-sm) {
+            width: $body-desktop-width;
+        }
+    
+        @media screen and (max-width: $breakpoint-sm) {
+            width: $body-mobile-width;
+            padding: 0px 15px;
+        }
+    }
+}

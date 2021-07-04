@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: assistant-regular;
+}
+
+@font-face {
+    font-family: assistant-regular;
+    src: url('./assets/fonts/assistant-regular.ttf');
+}
+
+.form-wizard-container {
+    margin-top: 35px; 
+}

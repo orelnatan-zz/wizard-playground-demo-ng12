@@ -1,0 +1,12 @@
+{
+    "list": [
+        {"id":0,"name":"Introduction","icon":"school","color":null,"disabled": false},
+        {"id":1,"name":"Standard login form","icon":"login","color":null,"disabled": false},
+        {"id":2,"name":"Standard registration form","icon":"edit_note","color":null,"disabled": false},
+        {"id":3,"name":"Validate value match","icon":"done_all","color":null,"disabled": false},
+        {"id":4,"name":"Limit date selection","icon":"event","color":null,"disabled": false},
+        {"id":5,"name":"Subscribing events","icon":"settings_input_antenna","color":null,"disabled": false},
+        {"id":6,"name":"Implement real time search engine","icon":"travel_explore","color":null,"disabled": false},
+        {"id":7,"name":"Remote submit","icon":"settings_remote","color":null,"disabled": false}
+    ]
+}

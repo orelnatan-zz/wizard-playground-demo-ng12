@@ -1,0 +1,43 @@
+@import './src/assets/config/utils.scss';
+
+.nav-bar-main {
+    display: block;
+    width: 100%;
+    padding-top: 70px;
+
+    .inner-layer {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        height: 70px;
+        background: $color-foggy;
+        padding: 10px 20px;
+        box-shadow: 0 3px 6px 0 rgba(0,0,0,.4);
+    }
+
+    .demo-selection {
+        margin-top: -10px;
+
+        @media screen and (min-width: $breakpoint-sm) {
+            width: 35%;
+        }
+    
+        @media screen and (max-width: $breakpoint-sm) {
+            width: 100%;
+        }
+    }
+
+    img {
+        width: 45px;
+        height: 45px;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            display: none;
+        }
+    }
+}
