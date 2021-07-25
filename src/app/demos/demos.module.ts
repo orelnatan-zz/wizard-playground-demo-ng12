@@ -8,6 +8,7 @@ import { Navbar } from './components/nav-bar/nav-bar.component';
 
 import { IntroductionDemo } from './pages/introduction-demo/introduction-demo.page';
 import { LoginDemo } from './pages/login-demo/login-demo.page';
+import { RegistrationDemo } from './pages/registration-demo/registration-demo.page';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoginDemo } from './pages/login-demo/login-demo.page';
     Navbar,
     IntroductionDemo,
     LoginDemo,
+    RegistrationDemo
   ],
   imports: [
     DemosRoutingModule,

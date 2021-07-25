@@ -148,17 +148,16 @@ export class LoginDemo implements OnDestroy {
         private _wizardEventBus: WizardEventBus
     ){
         this.subscription.add(this._wizardEventBus.subscribe("login-form-header", WizardEventTypes.CLICK, () => {
-            alert("Move to registration form")
+            alert("Move to registration page")
         }))
 
         this.subscription.add(this._wizardEventBus.subscribe("forgot-password", WizardEventTypes.CLICK, () => {
-            alert("Move to restore password form")
+            alert("Move to restore password page")
         }))
         
         this.subscription.add(this._wizardEventBus.subscribe("login-form-group", WizardEventTypes.SUBMIT, () => {
             alert("Form successfully submitted!");
         }))
-
     }
 
 

@@ -1,5 +1,5 @@
 {
-    "list": [
+    "items": [
         {"id":0,"name":"Introduction","icon":"school","color":null,"disabled": false},
         {"id":1,"name":"Standard login form","icon":"login","color":null,"disabled": false},
         {"id":2,"name":"Standard registration form","icon":"edit_note","color":null,"disabled": false},

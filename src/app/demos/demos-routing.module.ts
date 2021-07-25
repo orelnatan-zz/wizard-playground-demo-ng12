@@ -5,6 +5,7 @@ import { DemosRoot } from './components/demos-root/demos-root.component';
 
 import { IntroductionDemo } from './pages/introduction-demo/introduction-demo.page';
 import { LoginDemo } from './pages/login-demo/login-demo.page';
+import { RegistrationDemo } from './pages/registration-demo/registration-demo.page';
 
 const routes: Routes = [
     { path: '', redirectTo: 'introduction', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
         [
             { path: 'introduction', component: IntroductionDemo },
             { path: 'login', component: LoginDemo },
+            { path: 'registration', component: RegistrationDemo },
         ]
     },
 ];

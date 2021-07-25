@@ -6,7 +6,8 @@ import * as demos from '../../../../assets/data/demos.json';
 
 const ROUTES: {[key: string]: any} = {
     0: "/demos/introduction",
-    1: "/demos/login"
+    1: "/demos/login",
+    2: "/demos/registration"
 }
 
 @Component({
@@ -32,8 +33,6 @@ export class DemosRoot implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(demos)
-
         this._activatedRoute.queryParams.subscribe((params: Params): void => {
             this.groups = [
                 {
@@ -48,7 +47,7 @@ export class DemosRoot implements OnInit {
                                     id: "demo-selection-dropdown",
                                     selected: parseInt(params.demo) || 0,
                                     events: true,
-                                    items: demos.list
+                                    items: demos.items
                                 }
                             ]
                         }
