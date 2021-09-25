@@ -1,0 +1,37 @@
+
+<div class="page">
+    <div class="body">
+        <h3>This example shows how to submit a wizard using a custom button, with three different approaches.</h3>
+
+        <h4>Notes:</h4>
+        <ul>
+            <li>you can use the 'remoteSubmit()' function in order to manually submit a wizard.</li>
+            <li>the 'hideSubmit' property is set to true, means the form don't have the default submit button.</li>
+        </ul> 
+
+        <div class="form-wizard-container">
+            <ngx-mat-form-wizard #wizard
+                [groups]="groups"
+                [responsive]="true"
+                [hideSubmit]="true"
+                (onsubmit)="handleSubmit($event)"
+                (unsubmit)="handleUnsubmit($event)">
+            </ngx-mat-form-wizard>
+        </div>
+
+        <div class="remote-submit">
+            <button type="submit" (click)="usingViewChildReference()">
+                Submit Using 'ViewChild' Reference
+            </button>
+            
+            <button type="submit" (click)="bySendingTemplateReference(wizard)">
+                Submit By Sending Template Reference
+            </button>
+    
+            <button type="submit" (click)="wizard.remoteSubmit()">
+                Submit Directly Using Template Reference
+            </button>
+        </div>
+        
+    </div>
+</div>

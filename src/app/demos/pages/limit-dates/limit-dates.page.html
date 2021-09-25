@@ -1,0 +1,21 @@
+
+<div class="page">
+    <div class="body">
+        <h3>This example shows how to use, validate and limit the wizard's calendars.</h3>
+
+        <h4>Notes:</h4>
+        <ul>
+            <li>the validations here are triggered by 'when-touched'.</li>
+            <li>the 'minDateOf' and the 'maxDateOf' limits will work only for two calendars which are under the <u>same</u> group.</li>
+        </ul> 
+
+        <div class="form-wizard-container">
+            <ngx-mat-form-wizard
+                [groups]="groups"
+                [errorState]="'when-touched'"
+                [responsive]="true"
+                [hideSubmit]="true">
+            </ngx-mat-form-wizard>
+        </div>
+    </div>
+</div>

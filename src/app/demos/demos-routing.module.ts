@@ -3,17 +3,27 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DemosRoot } from './components/demos-root/demos-root.component';
 
-import { IntroductionDemo } from './pages/introduction-demo/introduction-demo.page';
-import { LoginDemo } from './pages/login-demo/login-demo.page';
-import { RegistrationDemo } from './pages/registration-demo/registration-demo.page';
+import { Login } from './pages/login/login.page';
+import { Registration } from './pages/registration/registration.page';
+import { ValueMatch } from './pages/value-match/value-match.page';
+import { LimitDates } from './pages/limit-dates/limit-dates.page';
+import { RemoteSubmit } from './pages/remote-submit/remote-submit.page';
+import { SubscribingEvents } from './pages/subscribing-events/subscribing-events.page';
+import { RealTimeSearch } from './pages/search-engine/real-time-search.page';
+import { CustomValidations } from './pages/custom-validations/custom-validations.page';
 
 const routes: Routes = [
     { path: '', redirectTo: 'introduction', pathMatch: 'full' },
     { path: '', component: DemosRoot, children:
         [
-            { path: 'introduction', component: IntroductionDemo },
-            { path: 'login', component: LoginDemo },
-            { path: 'registration', component: RegistrationDemo },
+            { path: 'login', component: Login },
+            { path: 'registration', component: Registration },
+            { path: 'value-match', component: ValueMatch },
+            { path: 'limit-dates', component: LimitDates },
+            { path: 'remote-submit', component: RemoteSubmit },
+            { path: 'subscribing-events', component: SubscribingEvents },
+            { path: 'real-time-search', component: RealTimeSearch },
+            { path: 'custom-validations', component: CustomValidations },
         ]
     },
 ];

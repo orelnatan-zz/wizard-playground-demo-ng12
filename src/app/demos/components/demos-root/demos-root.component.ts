@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
+import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard'; 
+//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
 
 import * as demos from '../../../../assets/data/demos.json';
 
 const ROUTES: {[key: string]: any} = {
-    0: "/demos/introduction",
     1: "/demos/login",
-    2: "/demos/registration"
+    2: "/demos/registration",
+    3: "/demos/value-match",
+    4: "/demos/limit-dates",
+    5: "/demos/remote-submit",
+    6: "/demos/subscribing-events",
+    7: "./demos/real-time-search",
+    8: "./demos/custom-validations"
 }
 
 @Component({

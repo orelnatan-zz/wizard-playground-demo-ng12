@@ -1,0 +1,15 @@
+
+<div class="page">
+    <div class="body">
+        <h3>This example shows how to subscribe to diffrent kinds of events.</h3>
+
+        <div class="form-wizard-container">
+            <ngx-mat-form-wizard #wizard
+                [groups]="groups"
+                [responsive]="true"
+                (onsubmit)="handleSubmit($event)"
+                (unsubmit)="handleUnsubmit($event)">
+            </ngx-mat-form-wizard>
+        </div>
+    </div>
+</div>

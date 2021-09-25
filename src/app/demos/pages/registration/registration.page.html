@@ -1,0 +1,26 @@
+
+<div class="page">
+    <div class="body">
+        <h3>This example shows how to create a basic registration form.</h3>
+
+        <h4>Notes:</h4>
+        <ul>
+            <li>the validations here are triggered by 'when-dirty'.</li>
+            <!-- <li>the 'wizard-clickable-element' attribute defines the 'terms and conditions' string as clickable.</li>
+            <li>the 'state' field is connected to the 'Globus' service, and provide autocomplete real time search engine with single select.</li>
+            <li>the 'city' field depends on the 'state' field selection, while they both using the 'Globus' service.</li> -->
+        </ul> 
+
+        <div class="form-wizard-container">
+            <ngx-mat-form-wizard
+                [groups]="groups"
+                [responsive]="true"
+                [autoscroll]="false"
+                [errorState]="'when-dirty'"
+                [offset]="70"
+                [submitText]="'Create New Account'"
+                (onsubmit)="handleSubmit($event)">
+            </ngx-mat-form-wizard>
+        </div>
+    </div>
+</div>

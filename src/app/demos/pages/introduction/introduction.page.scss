@@ -1,0 +1,12 @@
+@import './src/assets/config/utils.scss';
+
+.page {
+    @extend %page;
+    
+    .body {
+        @extend %body;
+    }
+
+    
+    
+}

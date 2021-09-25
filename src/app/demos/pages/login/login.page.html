@@ -1,0 +1,23 @@
+
+<div class="page">
+    <div class="body">
+        <h3>This example shows how to create a basic login form.</h3>
+
+        <h4>Notes:</h4>
+        <ul>
+            <li>the validations here are triggered by 'when-submitted' (this is also the default behavior).</li>
+            <li>the 'hideSubmit' property is set to true, means the form don't have the default submit button.</li>
+            <li>the 'frameless' property is set to true, means the form has no frame.</li>
+            <li>the 'wizard-clickable-element' attribute defines the 'Register now' string as clickable.</li>
+        </ul> 
+
+        <div class="form-wizard-container">
+            <ngx-mat-form-wizard
+                [groups]="groups"
+                [errorState]="'when-submitted'"
+                [responsive]="true"
+                [hideSubmit]="true">
+            </ngx-mat-form-wizard>
+        </div>
+    </div>
+</div>

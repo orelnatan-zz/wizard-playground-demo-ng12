@@ -1,15 +1,17 @@
 import { Component, OnDestroy } from '@angular/core';
-import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, IWizField } from 'ngx-mat-form-wizard';
 import { Subscription } from 'rxjs';
+import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, IWizField, IWizItem } from 'ngx-mat-form-wizard';
+//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, IWizField } from 'projects/ngx-mat-form-wizard/src/public-api';
 
 import * as banks from '../../../../assets/data/banks.json';
+import * as states from '../../../../assets/data/states.json';
 
 @Component({
-  selector: 'registration-demo',
-  templateUrl: './registration-demo.page.html',
-  styleUrls: ['./registration-demo.page.scss'],
+  selector: 'registration',
+  templateUrl: './registration.page.html',
+  styleUrls: ['./registration.page.scss'],
 })
-export class RegistrationDemo implements OnDestroy {
+export class Registration implements OnDestroy {
     subscription: Subscription = new Subscription();
 
     groups: Array<IWizGroup> = [
@@ -43,6 +45,9 @@ export class RegistrationDemo implements OnDestroy {
         {
             id: "personal-details",
             style: "dashed",
+            validation: {
+                default: "This group has some issues",
+            },
             headline: "Personal Details",
             containers: [
                 {
@@ -52,7 +57,14 @@ export class RegistrationDemo implements OnDestroy {
                             type: "text",
                             id: "first-name",
                             placeholder: "First name",
-                            validation: "This field is required",
+                            validation: { 
+                                maxLength: "First name should include up to 8 characters",
+                                minLength: "First name should include at least 2 characters",
+                                pattern: "Use upper/lower case letters only"
+                            },
+                            pattern: "[a-zA-Z ]*",
+                            minLength: 2,
+                            maxLength: 8,
                             required: true
                         },
                         {
@@ -64,13 +76,15 @@ export class RegistrationDemo implements OnDestroy {
                             type: "text",
                             id: "last-name",
                             placeholder: "Last name",
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true
                         },
                     ]
                 },
                 {
-                    id: "id-and-birth-date",
+                    id: "id-phone-and-birth-date",
                     fields: [
                         {
                             type: "date",
@@ -78,25 +92,31 @@ export class RegistrationDemo implements OnDestroy {
                             placeholder: "Birth date",
                             maxDate: new Date(new Date().getFullYear() - 18, new Date().getMonth(), new Date().getDate()),
                             hint: "You must be at least 18 years old",
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true
                         },
                         {
                             type: "number",
                             id: "id-number",
                             placeholder: "ID number",
-                            validation: "This field is required",
-                            minLength: 9,
-                            maxLength: 10,
+                            validation: {
+                                pattern: "ID should include 9 digits",
+                                required: "This field is required",
+                            },
+                            pattern: "([0-9]{9})",
                             required: true
                         },
                         {
                             type: "number",
                             id: "phone-number",
                             placeholder: "Phone number",
-                            validation: "This field is required",
-                            minLength: 9,
-                            maxLength: 10,
+                            validation: {
+                                pattern: "Phone should include 8 - 10 digits",
+                                required: "This field is required",
+                            },
+                            pattern: "([0-9]{8,10})",
                             required: true
                         }
                     ]
@@ -108,7 +128,9 @@ export class RegistrationDemo implements OnDestroy {
                             type: "checklist-single",
                             id: "user-gender",
                             placeholder: "Gender",
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true,
                             items: [
                                 { 
@@ -125,7 +147,9 @@ export class RegistrationDemo implements OnDestroy {
                             type: "checklist-single",
                             id: "user-status",
                             placeholder: "Status",
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true,
                             items: [
                                 { 
@@ -158,25 +182,32 @@ export class RegistrationDemo implements OnDestroy {
             id: "bank-and-address",
             headline: "Bank & Address",
             style: "dashed",
+            validation: {
+                default: "This group has some issues",
+            },
             containers: [
                 {
-                    id: null,
+                    id: "bank-details",
                     fields: [
                         {
                             type: "autocomplete-single",
                             id: "user-bank",
                             placeholder: "Bank",
                             items: banks.items,
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true
                         },
                         {
                             type: "number",
                             id: "bank-account-number",
                             placeholder: "Bank account number",
-                            validation: "This field is required",
-                            minLength: 7,
-                            maxLength: 12,
+                            validation: {
+                                pattern: "Account number should include 8 - 12 digits",
+                                required: "This field is required",
+                            },
+                            pattern: "([0-9]{8,12})",
                             required: true
                         },
                     ]
@@ -188,29 +219,39 @@ export class RegistrationDemo implements OnDestroy {
                             type: "autocomplete-single",
                             id: "user-state",
                             placeholder: "State",
+                            innerPlaceholder: "Find countries...",
                             events: true,
-                            items: [],
-                            validation: "This field is required",
+                            items: states.items,
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true
                         },
                         {
-                            type: "autocomplete-single",
+                            type: "text",
                             id: "user-city",
                             placeholder: "City",
-                            items: [],
-                            validation: "This field is required",
+                            validation: { 
+                                minLength: "City name should include at least 2 characters",
+                                required: "This field is required",
+                                pattern: "Use upper/lower case letters only"
+                            },
+                            pattern: "[a-zA-Z ]*",
+                            minLength: 2,
                             required: true
                         },
                     ]
                 },
                 {
-                    id: null,
+                    id: "address-details",
                     fields: [
                         {
                             type: "text",
                             id: "street-name",
                             placeholder: "Street",
-                            validation: "This field is required",
+                            validation: {
+                                required: "This field is required",
+                            },
                             required: true
                         },
                         {
@@ -229,19 +270,57 @@ export class RegistrationDemo implements OnDestroy {
         },
         {
             id: "set-password",
-            headline: "Set Password",
+            headline: "Create Password",
             style: "dashed",
+            validation: {
+                default: "This group has some issues",
+            },
             containers: [
                 {
-                    id: null,
+                    id: "terms-and-conditions",
+                    fields: [
+                        {
+                            type: "checklist-multiple",
+                            id: "accept-terms-and-conditions",
+                            events: true,
+                            validation: {
+                                required: "You must accept terms and conditions",
+                            },
+                            required: true,
+                            items: [
+                                { 
+                                    id: 1, 
+                                    name: `
+                                        Accept our
+                                        <strong wizard-clickable-element 
+                                              style="color: #2032EA;
+                                              text-decoration: underline; 
+                                              cursor: pointer;">
+                                            terms and conditions 
+                                        </strong>
+                                        before sign-in.
+                                    `
+                                }
+                            ],
+                        },
+                        
+                    ]
+                },
+                {
+                    id: "password-config",
                     fields: [
                         {
                             type: "password",
-                            id: "origin-password",
+                            id: "password-field-org",
                             placeholder: "Password",
-                            hint: "Password must be lowercase or numbers only, and 8-12 characters long.",
-                            validation: "Password is invalid",
-                            matchTo: "repeat-password",
+                            hint: "enter a password",
+                            validation: {
+                                pattern: "Password must be lowercase or numbers only",
+                                minLength: "Password can not be less than 8 characters long",
+                                maxLength: "Password can not be more than 12 characters long",
+                                required: "Password is required",
+                            },
+                            matchTo: "password-field-repeat",
                             pattern: "[a-z0-9 ]*",
                             minLength: 8,
                             maxLength: 12,
@@ -249,42 +328,40 @@ export class RegistrationDemo implements OnDestroy {
                         },
                         {
                             type: "password",
-                            id: "repeat-password",
-                            placeholder: "Repeat password",
-                            validation: "Password doesn't match, or invalid",
-                            matchWith: "origin-password",
+                            id: "password-field-repeat",
+                            placeholder: "Password Repeat",
+                            hint: "repeat the password",
+                            validation: {
+                                required: "Password is required",
+                                requireMatch: "Password doesn't match",
+                            },
+                            matchWith: "password-field-org",
                             required: true
                         },
                     ]
-                }
+                }, 
             ]
         }
     ];
 
     constructor(
-        private _wizardEventBus: WizardEventBus
+        private _wizardEventBus: WizardEventBus,
     ){
-        this.subscription.add(this._wizardEventBus.subscribe("registration-form-header", WizardEventTypes.CLICK, () => {
+        this.subscription.add(this._wizardEventBus.subscribe("accept-terms-and-conditions", WizardEventTypes.CLICK, (event: IWizData) => {
+            alert("Show terms and conditions policy")
+            console.log(event)
+        }))
+
+        this.subscription.add(this._wizardEventBus.subscribe("registration-form-header", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to login page")
         }))
-
-        this.subscription.add(this._wizardEventBus.subscribe("user-state", WizardEventTypes.SEARCH, (event: IWizData) => {
-            
-        }))
-
-        this.subscription.add(this._wizardEventBus.subscribe("user-state", WizardEventTypes.CHANGE, (event: IWizData) => {
-            const cityDropdown: IWizField = this.groups[2].containers[1].fields[1];
-
-            cityDropdown.pending = true;
-            cityDropdown.selected = null;
-
-        }))
     }
-
-
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
     }
 
+    handleSubmit(groups: Array<IWizGroup>): void {
+        alert("Form successfully submitted :)");
+    }
 }

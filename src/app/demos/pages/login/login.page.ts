@@ -1,13 +1,15 @@
 import { Component, OnDestroy } from '@angular/core';
-import { IWizGroup, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
 import { Subscription } from 'rxjs';
+import { IWizGroup, IWizData, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
+//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
+
 
 @Component({
-  selector: 'login-demo',
-  templateUrl: './login-demo.page.html',
-  styleUrls: ['./login-demo.page.scss'],
+  selector: 'login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
-export class LoginDemo implements OnDestroy {
+export class Login implements OnDestroy {
     subscription: Subscription = new Subscription();
 
     groups: Array<IWizGroup> = [
@@ -46,7 +48,10 @@ export class LoginDemo implements OnDestroy {
                             id: "username",
                             placeholder: "User name",
                             minLength: 2,
-                            validation: "Username must contain at least 2 characters.",
+                            validation: {
+                                minLength: "Username should include at least 2 characters",
+                                required: "This field is required"
+                            },
                             required: true
                         },
                     ] 
@@ -58,7 +63,10 @@ export class LoginDemo implements OnDestroy {
                             type: "email",
                             id: "user-email",
                             placeholder: "Email",
-                            validation: "Email is invalid.",
+                            validation: {
+                                email: "Invalid email address",
+                                required: "This field is required"
+                            },
                             required: true
                         },
                     ] 
@@ -70,7 +78,12 @@ export class LoginDemo implements OnDestroy {
                             type: "password",
                             id: "user-password",
                             placeholder: "Password",
-                            validation: "password must be lowercase or numbers only, and 8-12 characters long.",
+                            validation: {
+                                pattern: "Password must be lowercase or numbers only",
+                                minLength: "Password can not be less than 8 characters long",
+                                maxLength: "Password can not be more than 12 characters long",
+                                required: "Password is required",
+                            },
                             pattern: "[a-z0-9 ]*",
                             minLength: 8,
                             maxLength: 12,
@@ -147,21 +160,19 @@ export class LoginDemo implements OnDestroy {
     constructor(
         private _wizardEventBus: WizardEventBus
     ){
-        this.subscription.add(this._wizardEventBus.subscribe("login-form-header", WizardEventTypes.CLICK, () => {
+        this.subscription.add(this._wizardEventBus.subscribe("login-form-header", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to registration page")
         }))
 
-        this.subscription.add(this._wizardEventBus.subscribe("forgot-password", WizardEventTypes.CLICK, () => {
+        this.subscription.add(this._wizardEventBus.subscribe("forgot-password", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to restore password page")
         }))
         
-        this.subscription.add(this._wizardEventBus.subscribe("login-form-group", WizardEventTypes.SUBMIT, () => {
+        this.subscription.add(this._wizardEventBus.subscribe("login-form-group", WizardEventTypes.SUBMIT, (event: IWizData) => {
             alert("Form successfully submitted!");
         }))
     }
-
-
-
+    
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
     }
