@@ -5,18 +5,18 @@
         
         <h4>Notes:</h4>
         <ul>
-            <li>this group obligate the user to choose only 2 fields by a custom validation.</li>
-            <li>all fields are not required, but there have their own validations which still are going to take effect in case any value was inserted.</li>
-            <li>the third field has an IP address custom validation attached to it.</li>
-            <li>the fourth field has an Israeli ID custom validation attached to it.</li>
+            <li>This group obligate the user to choose only 2 fields by a custom validation.</li>
+            <li>All fields are not required, but there have their own validations which still are going to take effect in case any value was inserted.</li>
+            <li>The third field has an IP address custom validation attached to it.</li>
+            <li>The fourth field has an Israeli ID custom validation attached to it.</li>
         </ul> 
 
-        <div class="form-wizard-container">
-            <ngx-mat-form-wizard #wizard
-                [groups]="groups"
-                [responsive]="true"
-                (onsubmit)="handleSubmit($event)">
-            </ngx-mat-form-wizard>
-        </div>
+        <ngx-mat-form-wizard
+            [groups]="groups"
+            [responsive]="true"
+            [autoscroll]="true"
+            [offset]="70"
+            (onsubmit)="handleSubmit($event)">
+        </ngx-mat-form-wizard>
     </div>
 </div>

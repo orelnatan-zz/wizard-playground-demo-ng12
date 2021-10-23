@@ -5,18 +5,18 @@
 
         <h4>Notes:</h4>
         <ul>
-            <li>the value match validation will work only for two fields which are under the <u>same</u> group.</li>
-            <li>you can validate match also between two fields which are not from the same type.</li>
-            <li>this kind of validation is currently available <u>only</u> for the following field types: text, number, email, password.</li>   
+            <li>The value match validation will work only for two fields that are under the <u>same</u> group.</li>
+            <li>You can validate match also between two fields that are not of the same type.</li>
+            <li>This kind of validation is currently available <u>only</u> for the following field types: text, number, email, password.</li>   
         </ul> 
         
         <div class="form-wizard-container">
             <ngx-mat-form-wizard
                 [groups]="groups"
                 [responsive]="true"
-                [autoscroll]="false"
-                [offset]="70"
-                [hideSubmit]="true">
+                [hideSubmit]="true"
+                [autoscroll]="true"
+                [offset]="70">
             </ngx-mat-form-wizard>
         </div>
     </div>

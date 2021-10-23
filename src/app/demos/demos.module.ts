@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMatFormWizardModule } from 'ngx-mat-form-wizard';
-//import { NgxMatFormWizardModule } from 'projects/ngx-mat-form-wizard/src/public-api';
 import { DemosRoutingModule } from './demos-routing.module';
 
 import { DemosRoot } from './components/demos-root/demos-root.component';

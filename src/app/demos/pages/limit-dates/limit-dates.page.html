@@ -5,8 +5,8 @@
 
         <h4>Notes:</h4>
         <ul>
-            <li>the validations here are triggered by 'when-touched'.</li>
-            <li>the 'minDateOf' and the 'maxDateOf' limits will work only for two calendars which are under the <u>same</u> group.</li>
+            <li>The validations here are triggered by 'when-touched'.</li>
+            <li>The 'minDateOf' and the 'maxDateOf' limits will work only for two calendars that are under the <u>same</u> group.</li>
         </ul> 
 
         <div class="form-wizard-container">
@@ -14,7 +14,9 @@
                 [groups]="groups"
                 [errorState]="'when-touched'"
                 [responsive]="true"
-                [hideSubmit]="true">
+                [hideSubmit]="true"
+                [autoscroll]="true"
+                [offset]="70">
             </ngx-mat-form-wizard>
         </div>
     </div>

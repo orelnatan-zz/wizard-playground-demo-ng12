@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, IWizField, IWizItem } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, IWizField } from 'projects/ngx-mat-form-wizard/src/public-api';
+import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, } from 'ngx-mat-form-wizard';
 
 @Component({
   selector: 'value-match',
@@ -15,7 +14,7 @@ export class ValueMatch implements OnDestroy {
         {
             headline: "Number Match",
             id: "id-match",
-            style: "dotted",
+            style: "dashed",
             events: true,
             containers: [
                 {
@@ -60,7 +59,7 @@ export class ValueMatch implements OnDestroy {
                         {
                             type: "button",
                             id: "id-match-submit",
-                            placeholder: "ID Match Submit",
+                            placeholder: "Submit",
                             theme: "primary",
                             dosubmit: true,
                         },
@@ -71,7 +70,7 @@ export class ValueMatch implements OnDestroy {
         {
             headline: "Email Match",
             id: "email-match",
-            style: "dotted",
+            style: "dashed",
             events: true,
             containers: [
                 {
@@ -95,6 +94,7 @@ export class ValueMatch implements OnDestroy {
                             hint: "repeat the address",
                             validation: {
                                 required: "This field is required",
+                                email: "Invalid email address",
                                 requireMatch: "Address doesn't match",
                             },
                             matchWith: "email-field-org",
@@ -115,7 +115,7 @@ export class ValueMatch implements OnDestroy {
                         {
                             type: "button",
                             id: "email-match-submit",
-                            placeholder: "Email Match Submit",
+                            placeholder: "Submit",
                             theme: "primary",
                             dosubmit: true,
                         },
@@ -126,7 +126,7 @@ export class ValueMatch implements OnDestroy {
         {
             headline: "Text Match",
             id: "name-match",
-            style: "dotted",
+            style: "dashed",
             events: true,
             containers: [
                 {
@@ -175,7 +175,7 @@ export class ValueMatch implements OnDestroy {
                         {
                             type: "button",
                             id: "name-match-submit",
-                            placeholder: "Name Match Submit",
+                            placeholder: "Submit",
                             theme: "primary",
                             dosubmit: true,
                         },
@@ -186,7 +186,7 @@ export class ValueMatch implements OnDestroy {
         {
             headline: "Password Match",
             id: "password-match",
-            style: "dotted",
+            style: "dashed",
             events: true,
             containers: [
                 {
@@ -235,7 +235,7 @@ export class ValueMatch implements OnDestroy {
                         {
                             type: "button",
                             id: "password-match-submit",
-                            placeholder: "Password Match Submit",
+                            placeholder: "Submit",
                             theme: "primary",
                             dosubmit: true,
                         },
@@ -248,20 +248,20 @@ export class ValueMatch implements OnDestroy {
     constructor(
         private _wizardEventBus: WizardEventBus
     ){
-        this.subscription.add(this._wizardEventBus.subscribe("password-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
-            alert("The two passwords are matched!")
-        }))
-
-        this.subscription.add(this._wizardEventBus.subscribe("name-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
-            alert("The two names are matched!")
+        this.subscription.add(this._wizardEventBus.subscribe("id-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
+            alert("The two ID's are matched!")
         }))
 
         this.subscription.add(this._wizardEventBus.subscribe("email-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
             alert("The two emails are matched!")
         }))
 
-        this.subscription.add(this._wizardEventBus.subscribe("id-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
-            alert("The two ID's are matched!")
+        this.subscription.add(this._wizardEventBus.subscribe("name-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
+            alert("The two names are matched!")
+        }))
+
+        this.subscription.add(this._wizardEventBus.subscribe("password-match", WizardEventTypes.SUBMIT, (event: IWizData) => {
+            alert("The two passwords are matched!")
         }))
     }
 

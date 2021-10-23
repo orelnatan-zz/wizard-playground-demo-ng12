@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IWizGroup, NgxMatFormWizard } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
 
 @Component({
   selector: 'remote-submit',
@@ -13,6 +12,7 @@ export class RemoteSubmit {
     groups: Array<IWizGroup> = [
         {
             headline: "Application Form",
+            style: "dashed",
             containers: [
                 {
                     fields: [
@@ -85,7 +85,7 @@ export class RemoteSubmit {
     }
 
     handleSubmit(groups: Array<IWizGroup>): void {
-        alert("Form successfully submitted :)");
+        alert("Form successfully submitted!");
     }
 
     handleUnsubmit(groups: Array<IWizGroup>): void {

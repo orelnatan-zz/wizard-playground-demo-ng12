@@ -5,19 +5,18 @@
 
         <h4>Notes:</h4>
         <ul>
-            <li>the validations here are triggered by 'when-dirty'.</li>
-            <!-- <li>the 'wizard-clickable-element' attribute defines the 'terms and conditions' string as clickable.</li>
-            <li>the 'state' field is connected to the 'Globus' service, and provide autocomplete real time search engine with single select.</li>
-            <li>the 'city' field depends on the 'state' field selection, while they both using the 'Globus' service.</li> -->
+            <li>The validations here are triggered by 'when-dirty'.</li>
+            <li>The 'responsive' flag is set to true, which means this wizard is responsive.</li>
+            <li>The 'autoscroll' flag is set to true, the wizard will support automatic smooth scroll to an invalid input on submit attempt.</li>
         </ul> 
 
         <div class="form-wizard-container">
             <ngx-mat-form-wizard
                 [groups]="groups"
                 [responsive]="true"
-                [autoscroll]="false"
-                [errorState]="'when-dirty'"
+                [autoscroll]="true"
                 [offset]="70"
+                [errorState]="'when-dirty'"
                 [submitText]="'Create New Account'"
                 (onsubmit)="handleSubmit($event)">
             </ngx-mat-form-wizard>

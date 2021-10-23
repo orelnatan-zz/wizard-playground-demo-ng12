@@ -1,8 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IWizGroup, IWizData, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
-
 
 @Component({
   selector: 'login',
@@ -24,15 +22,14 @@ export class Login implements OnDestroy {
                         {
                             type: "content",
                             id: "login-form-header",
-                            events: true,
                             value: `
                                 <h2>Fill your details to login your account</h2>
                                 <span style="font-size: 13px">
                                     don't have an account? 
-                                    <strong wizard-clickable-element 
+                                    <strong id="register-now-link"
                                           style="color: #2032EA; 
-                                          text-decoration: 
-                                          underline; cursor: pointer">
+                                          text-decoration: underline;
+                                          cursor: pointer">
                                         Register now
                                     </strong>
                                 </span>
@@ -136,18 +133,16 @@ export class Login implements OnDestroy {
                         {
                             type: "content",
                             id: "forgot-password",
-                            events: true,
                             value: `
-                            <div style="text-align: center">
-                                <span wizard-clickable-element 
-                                      style="font-size: 13px; 
-                                      color: #2032EA; 
-                                      text-decoration: 
-                                      underline; 
-                                      cursor: pointer">
-                                    Forgot your password? 
-                                </span>
-                            </div>
+                                <div style="text-align: center">
+                                    <span id="forgot-password-link" 
+                                        style="font-size: 13px; 
+                                        color: #2032EA; 
+                                        text-decoration: underline; 
+                                        cursor: pointer">
+                                        Forgot your password? 
+                                    </span>
+                                </div>
                             `
                         },
                         
@@ -160,11 +155,11 @@ export class Login implements OnDestroy {
     constructor(
         private _wizardEventBus: WizardEventBus
     ){
-        this.subscription.add(this._wizardEventBus.subscribe("login-form-header", WizardEventTypes.CLICK, (event: IWizData) => {
+        this.subscription.add(this._wizardEventBus.subscribe("register-now-link", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to registration page")
         }))
 
-        this.subscription.add(this._wizardEventBus.subscribe("forgot-password", WizardEventTypes.CLICK, (event: IWizData) => {
+        this.subscription.add(this._wizardEventBus.subscribe("forgot-password-link", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to restore password page")
         }))
         

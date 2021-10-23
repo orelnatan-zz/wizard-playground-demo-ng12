@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, IWizField, IWizItem } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, IWizField } from 'projects/ngx-mat-form-wizard/src/public-api';
+import { IWizGroup, WizardEventBus, WizardEventTypes, IWizData, } from 'ngx-mat-form-wizard';
 
 import * as banks from '../../../../assets/data/banks.json';
 import * as states from '../../../../assets/data/states.json';
@@ -24,15 +23,14 @@ export class Registration implements OnDestroy {
                         {
                             type: "content",
                             id: "registration-form-header",
-                            events: true,
                             value: `
                                 <h2>Register new account</h2>
                                 <span style="font-size: 13px">
                                     already have an account? 
-                                    <strong wizard-clickable-element 
+                                    <strong id="login-new-link"
                                           style="color: #2032EA; 
-                                          text-decoration: 
-                                          underline; cursor: pointer">
+                                          text-decoration: underline;
+                                          cursor: pointer">
                                         Login now
                                     </strong>
                                 </span>
@@ -282,7 +280,6 @@ export class Registration implements OnDestroy {
                         {
                             type: "checklist-multiple",
                             id: "accept-terms-and-conditions",
-                            events: true,
                             validation: {
                                 required: "You must accept terms and conditions",
                             },
@@ -292,7 +289,7 @@ export class Registration implements OnDestroy {
                                     id: 1, 
                                     name: `
                                         Accept our
-                                        <strong wizard-clickable-element 
+                                        <strong id="terms-and-conditions-link" 
                                               style="color: #2032EA;
                                               text-decoration: underline; 
                                               cursor: pointer;">
@@ -347,12 +344,11 @@ export class Registration implements OnDestroy {
     constructor(
         private _wizardEventBus: WizardEventBus,
     ){
-        this.subscription.add(this._wizardEventBus.subscribe("accept-terms-and-conditions", WizardEventTypes.CLICK, (event: IWizData) => {
+        this.subscription.add(this._wizardEventBus.subscribe("terms-and-conditions-link", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Show terms and conditions policy")
-            console.log(event)
         }))
 
-        this.subscription.add(this._wizardEventBus.subscribe("registration-form-header", WizardEventTypes.CLICK, (event: IWizData) => {
+        this.subscription.add(this._wizardEventBus.subscribe("login-new-link", WizardEventTypes.CLICK, (event: IWizData) => {
             alert("Move to login page")
         }))
     }
@@ -362,6 +358,7 @@ export class Registration implements OnDestroy {
     }
 
     handleSubmit(groups: Array<IWizGroup>): void {
-        alert("Form successfully submitted :)");
+        alert("Form successfully submitted!");
     }
+    
 }

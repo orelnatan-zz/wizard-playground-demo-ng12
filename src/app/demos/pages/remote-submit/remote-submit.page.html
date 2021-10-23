@@ -5,19 +5,19 @@
 
         <h4>Notes:</h4>
         <ul>
-            <li>you can use the 'remoteSubmit()' function in order to manually submit a wizard.</li>
-            <li>the 'hideSubmit' property is set to true, means the form don't have the default submit button.</li>
+            <li>You can use the 'remoteSubmit()' function to manually submit a wizard.</li>
+            <li>The 'hideSubmit' property is set to true, which means the form doesn't have the default submit button.</li>
         </ul> 
 
-        <div class="form-wizard-container">
-            <ngx-mat-form-wizard #wizard
-                [groups]="groups"
-                [responsive]="true"
-                [hideSubmit]="true"
-                (onsubmit)="handleSubmit($event)"
-                (unsubmit)="handleUnsubmit($event)">
-            </ngx-mat-form-wizard>
-        </div>
+        <ngx-mat-form-wizard #wizard
+            [groups]="groups"
+            [responsive]="true"
+            [hideSubmit]="true"
+            [autoscroll]="true"
+            [offset]="70"
+            (onsubmit)="handleSubmit($event)"
+            (unsubmit)="handleUnsubmit($event)">
+        </ngx-mat-form-wizard>
 
         <div class="remote-submit">
             <button type="submit" (click)="usingViewChildReference()">

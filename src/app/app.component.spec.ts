@@ -20,12 +20,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'wizard-playground-demo'`, () => {
-    const fixture = TestBed.createComponent(AppRoot);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('wizard-playground-demo');
-  });
-
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppRoot);
     fixture.detectChanges();

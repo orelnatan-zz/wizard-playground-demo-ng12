@@ -5,10 +5,9 @@
 
         <h4>Notes:</h4>
         <ul>
-            <li>the validations here are triggered by 'when-submitted' (this is also the default behavior).</li>
-            <li>the 'hideSubmit' property is set to true, means the form don't have the default submit button.</li>
-            <li>the 'frameless' property is set to true, means the form has no frame.</li>
-            <li>the 'wizard-clickable-element' attribute defines the 'Register now' string as clickable.</li>
+            <li>The validations here are triggered by 'when-submitted' (this is also the default behavior).</li>
+            <li>The 'hideSubmit' property is set to true, which means the form doesn't have the default submit button.</li>
+            <li>The 'frameless' property is set to true, which means the form has no frame.</li>
         </ul> 
 
         <div class="form-wizard-container">
@@ -16,7 +15,9 @@
                 [groups]="groups"
                 [errorState]="'when-submitted'"
                 [responsive]="true"
-                [hideSubmit]="true">
+                [hideSubmit]="true"
+                [autoscroll]="true"
+                [offset]="70">
             </ngx-mat-form-wizard>
         </div>
     </div>

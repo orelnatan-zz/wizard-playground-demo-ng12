@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
 import { countFilledValuesValidator } from './validators/count-filled-values.validator';
 
 import * as moment from 'moment';                           // https://www.npmjs.com/package/angular2-moment
@@ -19,7 +18,7 @@ export class CustomValidations {
     groups: Array<IWizGroup> = [
         {
             id: "fill-only-2-fields-group",  
-            headline: "Choose Two Fields To Fill Up",
+            headline: "Choose two fields to fill up",
             style: "dashed",
             events: true,                    
             validation: { 
@@ -69,10 +68,10 @@ export class CustomValidations {
                         {
                             type: "number",
                             id: "user-israeli-id",               
-                            placeholder: "Enter Israeli ID",
+                            placeholder: "Enter israeli ID",
                             events: true,                         
                             validation: {
-                                custom: "Wrong Israeli ID",
+                                custom: "Wrong israeli ID",
                                 required: "This field is required"
                             },                  
                         },
@@ -125,12 +124,8 @@ export class CustomValidations {
         });
     }
 
-
-
-
-
     handleSubmit(groups: Array<IWizGroup>): void {
-        alert("Form successfully submitted :)");
+        alert("Form successfully submitted!");
     }
-
+    
 }

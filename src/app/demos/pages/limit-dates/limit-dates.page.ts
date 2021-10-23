@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IWizGroup, IWizData, WizardEventBus, WizardEventTypes, } from 'ngx-mat-form-wizard';
-//import { IWizData, IWizGroup, WizardEventBus, WizardEventTypes, } from 'projects/ngx-mat-form-wizard/src/public-api';
 
 import * as moment from 'moment';       // https://www.npmjs.com/package/angular2-moment
 
@@ -15,9 +14,9 @@ export class LimitDates implements OnDestroy {
 
     groups: Array<IWizGroup> = [
         {
-            headline: "Using Simple Strings",
+            headline: "Using simple strings",
             id: "simple-strings",
-            color: "#3f51b5",
+            style: "dashed",
             validation: {
                 default: "You are missing a date"
             },
@@ -84,9 +83,9 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using Moment Objects",
+            headline: "Using Moment objects",
             id: "moment-objects",
-            color: "#3f51b5",
+            style: "dashed",
             validation: {
                 default: "You are missing a date"
             },
@@ -102,8 +101,8 @@ export class LimitDates implements OnDestroy {
                             validation: {
                                 required: "This field is required",
                             },
-                            minDate: moment("2003-01-1").format("YYYY-MM-DD"),
-                            maxDate: moment("2010-07-25").format("YYYY-MM-DD"),
+                            minDate: moment("2003-01-1", "YYYY-MM-DD").format(),
+                            maxDate: moment("2010-07-25", "YYYY-MM-DD").format(),
                             required: true
                         },
                         {
@@ -115,7 +114,7 @@ export class LimitDates implements OnDestroy {
                                 required: "This field is required",
                             },
                             date: moment(moment().subtract(1, "year")).format("YYYY-MM-DD"),
-                            minDate: moment("2012-05-1").format("YYYY-MM-DD"),
+                            minDate: moment("2012-05-1", "YYYY-MM-DD").format(),
                             required: true
                         },
                         {
@@ -153,9 +152,9 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using JS Objects",
+            headline: "Using JS objects",
             id: "js-objects",
-            color: "#3f51b5",
+            style: "dashed",
             validation: {
                 default: "You are missing a date"
             },
@@ -222,9 +221,9 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using Dependent Calendars",
+            headline: "Using dependent calendars",
             id: "dependent-calendars",
-            color: "#3f51b5",
+            style: "dashed",
             validation: {
                 default: "You are missing a date"
             },
@@ -236,7 +235,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-start-date",
                             placeholder: "Start date",
-                            hint: "from 5/5/1991 until the middle date value",
+                            hint: "from 5/5/1991 to the middle date value",
                             date: new Date(),
                             minDate: new Date(1991, 4, 5),
                             maxDateOf: "dependent-calendars-middle-date",
@@ -249,7 +248,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-middle-date",
                             placeholder: "Middle date",
-                            hint: "between the start date value, until the end date value",
+                            hint: "between the start date value, to the end date value",
                             date: moment().format("YYYY-MM-DD"),
                             minDateOf: "dependent-calendars-start-date",
                             maxDateOf: "dependent-calendars-end-date",
@@ -262,7 +261,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-end-date",
                             placeholder: "End date",
-                            hint: "from the middle date value until 1/1/2035",
+                            hint: "from the middle date value to 1/1/2035",
                             date: new Date(moment().format("YYYY-MM-DD")),
                             minDateOf: "dependent-calendars-middle-date",
                             maxDate: new Date(moment("2035-01-01").format("YYYY-MM-DD")),
@@ -319,7 +318,7 @@ export class LimitDates implements OnDestroy {
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
     }
-
+    
 }
 
 

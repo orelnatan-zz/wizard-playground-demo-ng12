@@ -3,13 +3,20 @@
     <div class="body">
         <h3>This example shows how to subscribe to diffrent kinds of events.</h3>
 
-        <div class="form-wizard-container">
-            <ngx-mat-form-wizard #wizard
-                [groups]="groups"
-                [responsive]="true"
-                (onsubmit)="handleSubmit($event)"
-                (unsubmit)="handleUnsubmit($event)">
-            </ngx-mat-form-wizard>
-        </div>
+        <h4>Notes:</h4>
+        <ul>
+            <li>Using the 'WizardEventBus' service, it is possible to subscribe to an entity's events.</li>
+            <li>It's important to unsubscribe those subscriptions when the current view is destroyed.</li>
+            <li>Please open the console to see the results.</li>
+        </ul> 
+
+        <ngx-mat-form-wizard
+            [groups]="groups"
+            [responsive]="true"
+            [autoscroll]="true"
+            [offset]="70"
+            (onsubmit)="handleSubmit($event)"
+            (unsubmit)="handleUnsubmit($event)">
+        </ngx-mat-form-wizard>
     </div>
 </div>

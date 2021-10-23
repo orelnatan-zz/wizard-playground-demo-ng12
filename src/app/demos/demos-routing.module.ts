@@ -13,7 +13,7 @@ import { RealTimeSearch } from './pages/search-engine/real-time-search.page';
 import { CustomValidations } from './pages/custom-validations/custom-validations.page';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'introduction', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '', component: DemosRoot, children:
         [
             { path: 'login', component: Login },
