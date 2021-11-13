@@ -59,18 +59,21 @@ export class RealTimeSearch implements OnDestroy {
                             id: "select-employees",
                             placeholder: "Select employees",
                             innerPlaceholder: "Search employees...",
-                            hint: "select at least 4 employees",
+                            hint: "Search for names prefixes such as: 'th', 'or', 'so', 'le'",
                             events: true,
                             validation: {
-                                maxItems: "Please select up to 8 employees only",
-                                minItems: "Please select at least 4 employees",
+                                maxItems: "Please select up to 4 employees only",
+                                minItems: "Please select at least 2 employees",
                                 required: "This field is required", 
                             },
-                            minItems: 4,
-                            maxItems: 8,
+                            minItems: 2,
+                            maxItems: 4,
                             required: true
                         },
-                       
+                        {
+                            type: "void",
+                            id: null,
+                        }
                     ]
                 }
             ]
@@ -88,7 +91,10 @@ export class RealTimeSearch implements OnDestroy {
                             hint: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
                             events: true
                         },
-                        
+                        {
+                            type: "void",
+                            id: null,
+                        }
                     ]
                 },
                 {
@@ -186,6 +192,7 @@ export class RealTimeSearch implements OnDestroy {
     }
     
     handleSubmit(groups: Array<IWizGroup>): void {
+        console.log(groups)
         alert("Form successfully submitted!");
     }
 

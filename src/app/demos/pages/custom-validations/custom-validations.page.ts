@@ -63,7 +63,9 @@ export class CustomValidations {
                             validation: {
                                 custom: "Wrong IP address",
                                 required: "This field is required"
-                            },                  
+                            },
+                            // Or by using pattern:
+                            // pattern: "([0-9]{3}).([0-9]{3}).([0-9]{2}).([0-9]{3})"                  
                         },
                         {
                             type: "number",

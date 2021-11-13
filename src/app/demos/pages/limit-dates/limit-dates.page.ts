@@ -28,7 +28,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "simple-strings-calendar-1",
                             placeholder: "Select date",
-                            hint: "between 15/6/2005 to 20/11/2016",
+                            hint: "Between 15/6/2005 to 20/11/2016",
                             validation: {
                                 required: "This field is required",
                             },
@@ -40,7 +40,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "simple-strings-calendar-2",
                             placeholder: "Select date",
-                            hint: "from 1/3/2013",
+                            hint: "From 1/3/2013",
                             validation: {
                                 required: "This field is required",
                             },
@@ -52,7 +52,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "simple-strings-calendar-3",
                             placeholder: "Select date",
-                            hint: "until 15/10/2018",
+                            hint: "Until 15/10/2018",
                             validation: {
                                 required: "This field is required",
                             },
@@ -97,7 +97,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "moment-objects-calendar-1",
                             placeholder: "Select date",
-                            hint: "between 1/1/2003 to 25/07/2010",
+                            hint: "Between 1/1/2003 to 25/07/2010",
                             validation: {
                                 required: "This field is required",
                             },
@@ -109,7 +109,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "moment-objects-calendar-2",
                             placeholder: "Select date",
-                            hint: "from 1/5/2012",
+                            hint: "From 1/5/2012",
                             validation: {
                                 required: "This field is required",
                             },
@@ -121,7 +121,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "moment-objects-calendar-3",
                             placeholder: "Select date",
-                            hint: "until today",
+                            hint: "Until today",
                             validation: {
                                 required: "This field is required",
                             },
@@ -166,7 +166,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "js-objects-calendar-1",
                             placeholder: "Select date",
-                            hint: "between 5/5/1991 to 25/10/2010",
+                            hint: "Between 5/5/1991 to 25/10/2010",
                             validation: {
                                 required: "This field is required",
                             },
@@ -178,7 +178,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "js-objects-calendar-2",
                             placeholder: "Select date",
-                            hint: "from 5/1/2015",
+                            hint: "From 5/1/2015",
                             validation: {
                                 required: "This field is required",
                             },
@@ -190,7 +190,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "js-objects-calendar-3",
                             placeholder: "Select date",
-                            hint: "until 5/7/2030",
+                            hint: "Until 5/7/2030",
                             validation: {
                                 required: "This field is required",
                             },
@@ -235,7 +235,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-start-date",
                             placeholder: "Start date",
-                            hint: "from 5/5/1991 to the middle date value",
+                            hint: "From 5/5/1991 to the middle date value",
                             date: new Date(),
                             minDate: new Date(1991, 4, 5),
                             maxDateOf: "dependent-calendars-middle-date",
@@ -248,7 +248,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-middle-date",
                             placeholder: "Middle date",
-                            hint: "between the start date value, to the end date value",
+                            hint: "Between the start date value, to the end date value",
                             date: moment().format("YYYY-MM-DD"),
                             minDateOf: "dependent-calendars-start-date",
                             maxDateOf: "dependent-calendars-end-date",
@@ -261,7 +261,7 @@ export class LimitDates implements OnDestroy {
                             type: "date",
                             id: "dependent-calendars-end-date",
                             placeholder: "End date",
-                            hint: "from the middle date value to 1/1/2035",
+                            hint: "From the middle date value to 1/1/2035",
                             date: new Date(moment().format("YYYY-MM-DD")),
                             minDateOf: "dependent-calendars-middle-date",
                             maxDate: new Date(moment("2035-01-01").format("YYYY-MM-DD")),

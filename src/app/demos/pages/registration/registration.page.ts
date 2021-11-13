@@ -254,11 +254,16 @@ export class Registration implements OnDestroy {
                         },
                         {
                             type: "number",
+                            // Default pattern:
+                            // pattern: "[0-9 ]*"
                             id: "house-number",
                             placeholder: "House number",
+                            
                         },
                         {
                             type: "number",
+                            // Default pattern:
+                            // pattern: "[0-9 ]*"
                             id: "floor-number",
                             placeholder: "Floor number",
                         },
@@ -310,7 +315,7 @@ export class Registration implements OnDestroy {
                             type: "password",
                             id: "password-field-org",
                             placeholder: "Password",
-                            hint: "enter a password",
+                            hint: "Enter a password",
                             validation: {
                                 pattern: "Password must be lowercase or numbers only",
                                 minLength: "Password can not be less than 8 characters long",
@@ -327,7 +332,7 @@ export class Registration implements OnDestroy {
                             type: "password",
                             id: "password-field-repeat",
                             placeholder: "Password Repeat",
-                            hint: "repeat the password",
+                            hint: "Repeat the password",
                             validation: {
                                 required: "Password is required",
                                 requireMatch: "Password doesn't match",

@@ -23,7 +23,7 @@ export class ValueMatch implements OnDestroy {
                             type: "number",
                             id: "id-field-org",
                             placeholder: "ID",
-                            hint: "provide your ID",
+                            hint: "Provide your ID",
                             validation: {
                                 pattern: "ID should include 9 digits",
                                 required: "This field is required",
@@ -36,7 +36,7 @@ export class ValueMatch implements OnDestroy {
                             type: "number",
                             id: "id-field-repeat",
                             placeholder: "Repeat ID",
-                            hint: "repeat the ID",
+                            hint: "Repeat the ID",
                             validation: {
                                 required: "This field is required",
                                 requireMatch: "ID doesn't match",
@@ -79,7 +79,7 @@ export class ValueMatch implements OnDestroy {
                             type: "email",
                             id: "email-field-org",
                             placeholder: "Email",
-                            hint: "provide email address",
+                            hint: "Provide email address",
                             validation: { 
                                 email: "Invalid email address",
                                 required: "This field is required"
@@ -91,7 +91,7 @@ export class ValueMatch implements OnDestroy {
                             type: "email",
                             id: "email-field-repeat",
                             placeholder: "Repeat address",
-                            hint: "repeat the address",
+                            hint: "Repeat the address",
                             validation: {
                                 required: "This field is required",
                                 email: "Invalid email address",
@@ -135,7 +135,7 @@ export class ValueMatch implements OnDestroy {
                             type: "text",
                             id: "name-field-org",
                             placeholder: "Name",
-                            hint: "provide a name",
+                            hint: "Provide a name",
                             validation: { 
                                 maxLength: "Name should include up to 8 characters",
                                 minLength: "Name should include at least 2 characters",
@@ -152,7 +152,7 @@ export class ValueMatch implements OnDestroy {
                             type: "text",
                             id: "name-field-repeat",
                             placeholder: "Repeat name",
-                            hint: "repeat the name",
+                            hint: "Repeat the name",
                             validation: {
                                 required: "This field is required",
                                 requireMatch: "Name doesn't match",
@@ -195,7 +195,7 @@ export class ValueMatch implements OnDestroy {
                             type: "password",
                             id: "password-field-org",
                             placeholder: "Password",
-                            hint: "enter a password",
+                            hint: "Enter a password",
                             validation: {
                                 pattern: "Password must be lowercase or numbers only",
                                 minLength: "Password can not be less than 8 characters long",
@@ -212,7 +212,7 @@ export class ValueMatch implements OnDestroy {
                             type: "password",
                             id: "password-field-repeat",
                             placeholder: "Repeat Password",
-                            hint: "repeat the password",
+                            hint: "Repeat the password",
                             validation: {
                                 required: "This field is required",
                                 requireMatch: "Password doesn't match",

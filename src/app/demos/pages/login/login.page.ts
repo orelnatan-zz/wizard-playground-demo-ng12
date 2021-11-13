@@ -58,13 +58,15 @@ export class Login implements OnDestroy {
                     fields: [
                         {
                             type: "email",
+                            //  Default pattern:
+                            //  pattern: "^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\\.([a-zA-Z]{2,5})$"
                             id: "user-email",
                             placeholder: "Email",
                             validation: {
                                 email: "Invalid email address",
                                 required: "This field is required"
                             },
-                            required: true
+                            required: true,
                         },
                     ] 
                 },
