@@ -9,7 +9,7 @@ import { ValueMatch } from './pages/value-match/value-match.page';
 import { LimitDates } from './pages/limit-dates/limit-dates.page';
 import { RemoteSubmit } from './pages/remote-submit/remote-submit.page';
 import { SubscribingEvents } from './pages/subscribing-events/subscribing-events.page';
-import { RealTimeSearch } from './pages/search-engine/real-time-search.page';
+import { RealTimeSearch } from './pages/real-time-search/real-time-search.page';
 import { CustomValidations } from './pages/custom-validations/custom-validations.page';
 
 const routes: Routes = [
