@@ -22,7 +22,7 @@ export class CustomValidations {
             style: "dashed",
             events: true,                    
             validation: { 
-                custom: "This group requires exactly 2 fields to be filled",
+                custom: "This group requires exactly two fields to be filled",
                 default: "This group has some issues"
             },                      
             containers: [   
