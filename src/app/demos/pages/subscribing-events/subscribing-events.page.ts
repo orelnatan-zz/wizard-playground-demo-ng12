@@ -17,7 +17,7 @@ export class SubscribingEvents implements OnDestroy {
             validation: {
                 default: "This group has some issues",
             },
-            events: true,       // remember to set the 'events' flag to true.
+            events: true,       // Remember to set the 'events' flag to true.
             containers: [
                 {
                     fields: [
@@ -37,7 +37,7 @@ export class SubscribingEvents implements OnDestroy {
                           //  accept: ".word, .pdf, .json, .gif, .html",                                   
                             minItems: 2,                                          
                             maxItems: 5,
-                            events: true,       // remember to set the 'events' flag to true.
+                            events: true,       // Remember to set the 'events' flag to true.
                             required: true,                                     
                         },
                     ]
@@ -69,7 +69,7 @@ export class SubscribingEvents implements OnDestroy {
     constructor(
         private _wizardEventBus: WizardEventBus,
     ){
-        // subscribing to the group events.
+        // Subscribing the group's events.
         this.subscription.add(this._wizardEventBus.subscribe("subscribing-events-example-group", WizardEventTypes.CHANGE, (event: IWizData) => {
             console.log("CHANGE event occurs every time one of the group's fields has changed its value. ", event);
         }))
@@ -86,7 +86,7 @@ export class SubscribingEvents implements OnDestroy {
             console.log("UNSUBMIT event occurs when the group failed to submit. ", event);
         }))
 
-        // subscribing to the field events.
+        // Subscribing the field's events.
         this.subscription.add(this._wizardEventBus.subscribe("upload-files", WizardEventTypes.CHANGE, (event: IWizData) => {
             console.log("CHANGE event occurs every time the input field has changed its value. ", event);
         }))
@@ -109,7 +109,7 @@ export class SubscribingEvents implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();    // remember to unsubscribe when the view is destroyed.
+        this.subscription.unsubscribe();    // Remember to unsubscribe when the view is destroyed.
     }
 
     handleSubmit(groups: Array<IWizGroup>): void {

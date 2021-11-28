@@ -6,7 +6,7 @@ import { DemosRoot } from './components/demos-root/demos-root.component';
 import { Login } from './pages/login/login.page';
 import { Registration } from './pages/registration/registration.page';
 import { ValueMatch } from './pages/value-match/value-match.page';
-import { LimitDates } from './pages/limit-dates/limit-dates.page';
+import { HandleDates } from './pages/handle-dates/handle-dates.page';
 import { RemoteSubmit } from './pages/remote-submit/remote-submit.page';
 import { SubscribingEvents } from './pages/subscribing-events/subscribing-events.page';
 import { RealTimeSearch } from './pages/real-time-search/real-time-search.page';
@@ -19,7 +19,7 @@ const routes: Routes = [
             { path: 'login', component: Login },
             { path: 'registration', component: Registration },
             { path: 'value-match', component: ValueMatch },
-            { path: 'limit-dates', component: LimitDates },
+            { path: 'handle-dates', component: HandleDates },
             { path: 'remote-submit', component: RemoteSubmit },
             { path: 'subscribing-events', component: SubscribingEvents },
             { path: 'real-time-search', component: RealTimeSearch },

@@ -5,16 +5,16 @@ import { IWizGroup, IWizData, WizardEventBus, WizardEventTypes, } from 'ngx-mat-
 import * as moment from 'moment';       // https://www.npmjs.com/package/angular2-moment
 
 @Component({
-  selector: 'limit-dates',
-  templateUrl: './limit-dates.page.html',
-  styleUrls: ['./limit-dates.page.scss'],
+  selector: 'handle-dates',
+  templateUrl: './handle-dates.page.html',
+  styleUrls: ['./handle-dates.page.scss'],
 })
-export class LimitDates implements OnDestroy {
+export class HandleDates implements OnDestroy {
     subscription: Subscription = new Subscription();
 
     groups: Array<IWizGroup> = [
         {
-            headline: "Using simple strings",
+            headline: "Handle dates using simple strings",
             id: "simple-strings",
             style: "dashed",
             validation: {
@@ -83,7 +83,7 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using Moment objects",
+            headline: "Handle dates using Moment objects",
             id: "moment-objects",
             style: "dashed",
             validation: {
@@ -152,7 +152,7 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using JS objects",
+            headline: "Handle dates using JS objects",
             id: "js-objects",
             style: "dashed",
             validation: {
@@ -221,7 +221,7 @@ export class LimitDates implements OnDestroy {
             ]
         },
         {
-            headline: "Using dependent calendars",
+            headline: "Limit dates using dependent calendars",
             id: "dependent-calendars",
             style: "dashed",
             validation: {

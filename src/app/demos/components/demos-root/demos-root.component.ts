@@ -8,7 +8,7 @@ const ROUTES: {[key: string]: any} = {
     1: "/demos/login",
     2: "/demos/registration",
     3: "/demos/value-match",
-    4: "/demos/limit-dates",
+    4: "/demos/handle-dates",
     5: "/demos/remote-submit",
     6: "/demos/subscribing-events",
     7: "/demos/real-time-search",

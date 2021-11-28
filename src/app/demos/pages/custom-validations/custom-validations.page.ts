@@ -17,7 +17,7 @@ export class CustomValidations {
     
     groups: Array<IWizGroup> = [
         {
-            id: "fill-only-2-fields-group",  
+            id: "fill-two-fields-group",  
             headline: "Choose two fields to fill up",
             style: "dashed",
             events: true,                    
@@ -113,7 +113,7 @@ export class CustomValidations {
     constructor(
         private _wizardEventBus: WizardEventBus,
     ){
-        this._wizardEventBus.subscribe("fill-only-2-fields-group", WizardEventTypes.VALIDATE, (event: IWizData) => {
+        this._wizardEventBus.subscribe("fill-two-fields-group", WizardEventTypes.VALIDATE, (event: IWizData) => {
             event.content.invalid = !countFilledValuesValidator(event.ngForm.form, 2) && event.ngForm.submitted;
         });
 

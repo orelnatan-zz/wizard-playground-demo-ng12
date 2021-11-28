@@ -156,11 +156,11 @@ export class RealTimeSearch implements OnDestroy {
     }
 
     handleStateChanged(event: IWizData): void {
-        const cities: IWizField = this.groups[0].containers[0].fields[1];   // get the city select field config object.
+        const cities: IWizField = this.groups[0].containers[0].fields[1];   // Get the city select field config object.
         const name: string = event.field.items.find(
-            state => state.id == event.content).name;    // find the state name by the selected id.        
+            state => state.id == event.content).name;    // Find the state name by the selected id.        
         
-        cities.items = [];            // reset the field items. 
+        cities.items = [];            // Reset the field items. 
         cities.selected = null;          
         cities.pending = true;         
         this._globus.getCitiesByStateName(name).subscribe((response: Array<IWizItem>) => {
@@ -181,7 +181,7 @@ export class RealTimeSearch implements OnDestroy {
     }
 
     handleIpsumsChanged(event: IWizData): void {
-        const checklist: IWizField = this.groups[2].containers[1].fields[0];    // get the ipsums checklist field config object.
+        const checklist: IWizField = this.groups[2].containers[1].fields[0];    // Get the ipsums checklist field config object.
 
         event.field.pending = true;
         this._loremIpsum.getIpsumsByKeyword(event.content).subscribe((response: Array<IWizItem>) => {

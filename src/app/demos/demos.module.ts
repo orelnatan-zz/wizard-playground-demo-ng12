@@ -11,7 +11,7 @@ import { GithubLink } from './components/github-link/github-link.component';
 import { Login } from './pages/login/login.page';
 import { Registration } from './pages/registration/registration.page';
 import { ValueMatch } from './pages/value-match/value-match.page';
-import { LimitDates } from './pages/limit-dates/limit-dates.page';
+import { HandleDates } from './pages/handle-dates/handle-dates.page';
 import { RemoteSubmit } from './pages/remote-submit/remote-submit.page';
 import { SubscribingEvents } from './pages/subscribing-events/subscribing-events.page';
 import { RealTimeSearch } from './pages/real-time-search/real-time-search.page';
@@ -25,7 +25,7 @@ import { CustomValidations } from './pages/custom-validations/custom-validations
     Login,
     Registration,
     ValueMatch,
-    LimitDates,
+    HandleDates,
     RemoteSubmit,
     SubscribingEvents,
     RealTimeSearch,

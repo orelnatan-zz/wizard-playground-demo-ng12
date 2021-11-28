@@ -23,7 +23,7 @@ export class Login implements OnDestroy {
                             type: "content",
                             id: "login-form-header",
                             value: `
-                                <h2>Fill your details to login your account</h2>
+                                <h2>Fill in your details to log in to your account</h2>
                                 <span style="font-size: 13px">
                                     don't have an account? 
                                     <strong id="register-now-link"
